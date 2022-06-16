@@ -1,0 +1,36 @@
+@import '../../Assets/variables';
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Zen+Kurenaido&display=swap');
+
+*{
+  margin:0;
+}
+
+.main{
+width:100vw;
+height:10vh;
+margin:0;
+font-weight: bold;
+background-color: $text-hover;
+display:flex;
+align-items: center;
+justify-content: space-around;
+border-bottom: 5px solid $back;
+
+  a{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    padding:10p;
+    color:$text;
+    font-size: 30px;
+    border: none;
+    text-decoration: none;
+    letter-spacing: 2px;
+    background-color: $text-hover;
+
+    &:hover{
+      color:$back-hover;
+      transition: 0.8s ease;
+    }
+
+  }
+
+}
