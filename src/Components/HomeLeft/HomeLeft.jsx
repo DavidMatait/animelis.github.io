@@ -8,7 +8,8 @@ const [ispending, setPending] = useState(true);
 const [error, setError]=useState(null);
 const [data, setData]=useState('');
 const [prev,setPrev]=useState(0);
-// Fetching API data of Top Upcoming Anime
+
+// Fetching API data of Anime recomendations 
 useEffect(()=>{
   fetch("https://api.jikan.moe/v4/recommendations/anime")
   .then(res=>{
@@ -18,7 +19,7 @@ useEffect(()=>{
     return res.json()
   })
   .then((data)=>{
-    setData(data.data.slice(0,10))
+    setData(data.data.slice(10,20))
     setPending(false)
     setError(null)
   })
@@ -29,16 +30,10 @@ useEffect(()=>{
 // Prev does prevent data from infinite loop  
 },[prev])
 
-console.log(data)
-
-
-
-
-
   return (
     <div className={styles.main}>
       <h1>Recomendations from the MyAnimeList users</h1>
-      <HomeLeftCard/>
+      {data && data.map(data=><HomeLeftCard data={data}/>)}
     </div>
   )
 }
