@@ -11,7 +11,7 @@ if(data.start_date === null){
   return (
     <div className={styles.card}>
       <img src={data.image_url}/>
-      <h1>{data.rank}.{data.title}</h1>
+      <h2>{data.rank}.{data.title}</h2>
       <p>Starting: {data.start_date}</p>
     </div>
   )

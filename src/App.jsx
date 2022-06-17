@@ -4,6 +4,7 @@ import Home from './Components/Home';
 import About from './Components/About';
 import Nav from './Components/Nav';
 import HomeLeft from './Components/HomeLeft';
+import HomeBottom from './Components/HomeBottom';
 import {
   BrowserRouter,
   Routes,
@@ -27,7 +28,7 @@ useEffect(()=>{
     return res.json()
   })
   .then((data)=>{
-    setData(data.top.slice(0,10))
+    setData(data.top)
     setPending(false)
     setError(null)
   })
@@ -38,22 +39,17 @@ useEffect(()=>{
 // Prev does prevent data from infinite loop  
 },[prev])
 
-// // if(mag){
-// //  setRec(mag.data.map(mag=>mag).slice(0,10))
-// // }
-
-// console.log(rec)
-
 // BrowserRouter is used to manage the website pages effectively
 return (
   <div className={styles.main}>    
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<><Nav/>
-        <div className={styles.mid}>
-        <HomeLeft/>
+          <div className={styles.mid}>
+          <HomeLeft/>
           <Home data={data}/>
-        </div></>}/>
+          </div>
+        <HomeBottom/></>}/>
         <Route path="/about" element={<About/>}/>
       </Routes>
     </BrowserRouter> 

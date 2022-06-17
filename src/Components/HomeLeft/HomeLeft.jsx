@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import styles from './homeleft.module.scss';
 import HomeLeftCard from '../HomeLeftCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 
 const HomeLeft = () => {
@@ -19,7 +22,7 @@ useEffect(()=>{
     return res.json()
   })
   .then((data)=>{
-    setData(data.data.slice(10,20))
+    setData(data.data)
     setPending(false)
     setError(null)
   })
@@ -31,9 +34,20 @@ useEffect(()=>{
 },[prev])
 
   return (
-    <div className={styles.main}>
-      <h1>Recomendations from the MyAnimeList users</h1>
-      {data && data.map(data=><HomeLeftCard data={data}/>)}
+    <div className={styles.main}>      
+    <h1>Recomendations from the MyAnimeList users</h1>
+
+      <div className={styles.border}>
+        <p><FontAwesomeIcon icon={faAngleUp} /></p>
+      </div> 
+
+      <div className={styles.rec}>
+        {data && data.map(data=><HomeLeftCard data={data}/>)}
+      </div>
+
+      <div className={styles.border}>
+        <p><FontAwesomeIcon icon={faAngleDown} /></p>
+      </div>
     </div>
   )
 }

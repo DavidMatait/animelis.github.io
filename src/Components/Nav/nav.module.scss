@@ -10,7 +10,7 @@ width:100vw;
 height:10vh;
 margin:0;
 font-weight: bold;
-background-color: $text-hover;
+background-color: $back;
 display:flex;
 align-items: center;
 justify-content: space-around;
@@ -24,7 +24,7 @@ border-bottom: 5px solid $back;
     border: none;
     text-decoration: none;
     letter-spacing: 2px;
-    background-color: $text-hover;
+    background-color: $back;
 
     &:hover{
       color:$back-hover;
