@@ -9,8 +9,10 @@ import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 const HomeBottom = () => {
   return (
     <div className={styles.main}>
-      <p><FontAwesomeIcon icon={faLinkedin} /></p>
-      <p><FontAwesomeIcon icon={faGithubSquare}/></p>
+      <a href='https://linkedin.com/in/deividas-mataitis-ab5778216' target='_blank'>
+        <FontAwesomeIcon icon={faLinkedin}/></a>
+      <a href='https://github.com/DavidMatait' target='_blank'>
+        <FontAwesomeIcon icon={faGithubSquare}/></a>
     </div>
   )
 }
