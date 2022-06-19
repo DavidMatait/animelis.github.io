@@ -19,6 +19,12 @@ const About = () => {
         practice and might be somewhat interesting to see what you can find
         here. Enjoy!
       </p>
+      <h1>What coding this website includes?</h1>
+      <p>
+        This website is made using JavaScript and SCSS in the React. 
+        Additionally, API calls, fontawesome and routing system are 
+        integrated.
+      </p>
     </div>
    </div>
   )

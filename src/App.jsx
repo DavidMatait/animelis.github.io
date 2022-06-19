@@ -6,6 +6,7 @@ import Nav from './Components/Nav';
 import HomeLeft from './Components/HomeLeft';
 import HomeBottom from './Components/HomeBottom';
 import HomeRight from './Components/HomeRight';
+import MyList from './Components/MyList';
 import {
   BrowserRouter,
   Routes,
@@ -53,6 +54,7 @@ return (
           </div>
         <HomeBottom/></>}/>
         <Route path="/about" element={<About/>}/>
+        <Route path="/mylist" element={<MyList/>}/>
       </Routes>
     </BrowserRouter> 
   </div>
