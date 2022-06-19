@@ -1,10 +1,24 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react';
 import styles from './mylist.module.scss';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
+// import {db} from '../../firebase';
+// import {collection, addDoc, Timestamp} from 'firebase/firestore';
+
 
 const MyList = () => {
+
+const [title, setTitle]=useState('');
+const [genre, setGenre]=useState('');
+const [numb, setNumb]=useState('');
+const [comment, setComment]=useState('');
+
+console.log(title)
+console.log(genre)
+console.log(numb)
+console.log(comment)
+
   return (
     <div className={styles.main}>
     <div className={styles.top}>
@@ -13,9 +27,9 @@ const MyList = () => {
     </div>
     <h2>Add the anime you watched:</h2>
     <p>Title:</p>
-    <input></input>
+    <input value={title} onChange={(e) => {setTitle(e.target.value)}}/>
     <p>Genre:</p>
-    <select>
+    <select value={genre} onChange={(e) => {setGenre(e.target.value)}}>
       <option value="Adventure">Adventure</option>
       <option value="Action">Action</option>
       <option value="Comedy">Comedy</option>
@@ -31,9 +45,9 @@ const MyList = () => {
       <option value="Romance">Romance</option>
     </select>
     <p>Number of episodes:</p>
-    <input type="number"></input>
+    <input type="number" value={numb} onChange={(e) => {setNumb(e.target.value)}}/>
     <p>Comment:</p>
-    <input></input>
+    <input value={comment} onChange={(e) => {setComment(e.target.value)}}/>
     <button>Submit</button>
     </div>
   )
