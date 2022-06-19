@@ -13,11 +13,16 @@ const [title, setTitle]=useState('');
 const [genre, setGenre]=useState('');
 const [numb, setNumb]=useState('');
 const [comment, setComment]=useState('');
+const [card, setCard]=useState([]);
 
-console.log(title)
-console.log(genre)
-console.log(numb)
-console.log(comment)
+console.log(card)
+
+//Handle submit function to create list card
+   const handleSubmit = (e) => {
+    e.preventDefault()
+    let newCard = {title:title,genre:genre,numb:numb,comment:comment}
+    card.push(newCard)
+    }
 
   return (
     <div className={styles.main}>
@@ -48,7 +53,7 @@ console.log(comment)
     <input type="number" value={numb} onChange={(e) => {setNumb(e.target.value)}}/>
     <p>Comment:</p>
     <input value={comment} onChange={(e) => {setComment(e.target.value)}}/>
-    <button>Submit</button>
+    <button onClick={handleSubmit}>Submit</button>
     </div>
   )
 }
