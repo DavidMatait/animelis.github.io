@@ -21,6 +21,19 @@
     margin: 10px;
   }
 
+  button{
+    background-color: $text;
+    border:none;
+    color:$line;
+    font-size: 15px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+
+    &:hover{
+      font-weight: bold;
+    }
+
+  }
+
   a{
     margin: 10px;
     text-decoration: none;
