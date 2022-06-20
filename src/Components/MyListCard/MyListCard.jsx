@@ -4,22 +4,25 @@ import styles from './mylistcard.module.scss';
 const MyListCard = (props) => {
 const {data, hook, setHook}=props;
 
-console.log(data)
-
+// Hook forces component to re-render
 if(!hook){
   setHook(hook)
 }
 
-
   return (
     <div>
-      <p>hello</p>
+      <h1>My List</h1>
       {data.map(function(d, idx){
+        if(d.comment===""){
+          d.comment="No Comment"
+        }
+
       return (<div>
-        <p key={idx}>Title: {d.title}</p>
+        <h2 key={idx}>{idx+1}. {d.title}</h2>
         <p key={idx}>Genre: {d.genre}</p>
         <p key={idx}>Number of episodes: {d.numb}</p>
         <p key={idx}>Comment: {d.comment}</p>
+        <p key={idx}>Rating: {d.rating}/10</p>
         </div>)})}
 
     </div>

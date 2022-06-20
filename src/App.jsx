@@ -64,5 +64,5 @@ export default App;
 
 // research web design
 // bugfix more/less button to not show on strings which meets condition
-// start my list
+// style mylist plus fix the input field erase
 
