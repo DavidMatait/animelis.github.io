@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import MyListCard from '../MyListCard';
+import MyListMetrics from '../MyListMetrics';
 
 const MyList = () => {
 
@@ -80,7 +81,7 @@ const decreaseV=()=>{
       </select>
 
       <p>Number of episodes:</p>
-      <input type="number" value={numb} onChange={(e) => {setNumb(e.target.value)}} required/>
+      <input type="text" pattern="\d*" maxlength="4" value={numb} onChange={(e) => {setNumb(e.target.value)}} required/>
 
       <p>Comment:</p>
       <input value={comment} onChange={(e) => {setComment(e.target.value)}}/>
@@ -93,9 +94,9 @@ const decreaseV=()=>{
       <button type="submit">Submit</button>
       </form>
 
-      <MyListCard data={data}
-                  hook={hook}
-                  setHook={setHook}/>
+      <MyListCard data={data} hook={hook} setHook={setHook}/>
+
+      <MyListMetrics data={data} hook={hook} setHook={setHook}/>
 
     </div>
   )
