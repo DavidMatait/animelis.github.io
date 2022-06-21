@@ -1,11 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styles from './mylist.module.scss';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import MyListCard from '../MyListCard';
-// import {db} from '../../firebase';
-// import {collection, addDoc, Timestamp} from 'firebase/firestore';
 
 const MyList = () => {
 
@@ -23,6 +21,11 @@ const handleSubmit = (e) => {
   let newCard = {title:title,genre:genre,numb:numb,comment:comment,rating:rating}
   data.push(newCard)
   setHook(!hook)
+  setTitle('');
+  setGenre('')
+  setNumb('')
+  setComment('')
+  setRating(0)
 }
 
 //Set rating out of 10
