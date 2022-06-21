@@ -62,7 +62,6 @@ return (
 }
 export default App;
 
-// research web design
-// bugfix more/less button to not show on strings which meets condition
-// style mylist plus fix the input field erase
+// style mylist 
+//fix upcoming anime more info function for long titles
 

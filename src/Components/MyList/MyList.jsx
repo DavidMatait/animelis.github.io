@@ -55,46 +55,51 @@ const decreaseV=()=>{
       <h1>My List</h1>
     </div>
 
-      <h2>Add the anime you watched:</h2>
+      <div className={styles.formlist}>
+        <div className={styles.formH}>
+          <h2 className={styles.h2}>Add the anime you watched:</h2> 
+          <form className={styles.form} onSubmit={handleSubmit}>
 
-      <form onSubmit={handleSubmit}>
+            <p>Title:</p>
+              <input value={title} onChange={(e) => {setTitle(e.target.value)}} required/>
 
-      <p>Title:</p>
-      <input value={title} onChange={(e) => {setTitle(e.target.value)}} required/>
+            <p>Genre:</p>
+              <select value={genre} onChange={(e) => {setGenre(e.target.value)}} required>
+                <option value="">Choose below</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Slice of Life">Slice of Life</option>
+                <option value="Drama"> Drama</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Supernatural">Supernatural</option>
+                <option value="Magic">Magic</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Horror">Horror</option>
+                <option value="Psychological">Psychological</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Romance">Romance</option>
+              </select>
 
-      <p>Genre:</p>
-      <select value={genre} onChange={(e) => {setGenre(e.target.value)}} required>
-        <option value="">Choose below</option>
-        <option value="Adventure">Adventure</option>
-        <option value="Action">Action</option>
-        <option value="Comedy">Comedy</option>
-        <option value="Slice of Life">Slice of Life</option>
-        <option value="Drama"> Drama</option>
-        <option value="Fantasy">Fantasy</option>
-        <option value="Supernatural">Supernatural</option>
-        <option value="Magic">Magic</option>
-        <option value="Mystery">Mystery</option>
-        <option value="Horror">Horror</option>
-        <option value="Psychological">Psychological</option>
-        <option value="Sci-Fi">Sci-Fi</option>
-        <option value="Romance">Romance</option>
-      </select>
+            <p>Number of episodes:</p>
+              <input type="text" pattern="\d*" maxlength="4" value={numb} onChange={(e) => {setNumb(e.target.value)}} required/>
 
-      <p>Number of episodes:</p>
-      <input type="text" pattern="\d*" maxlength="4" value={numb} onChange={(e) => {setNumb(e.target.value)}} required/>
+            <p>Comment:</p>
+              <input value={comment} onChange={(e) => {setComment(e.target.value)}}/>
+           
+           <p>Rating:</p>
+            <div className={styles.rates}>
+              <button type="button" onClick={decreaseV}>-</button>
+                <h3>{rating}</h3>
+              <button type="button" onClick={increaseV}>+</button>
+            </div>
+            
+            <button type="submit">Add</button>
+          </form>
+        </div>
 
-      <p>Comment:</p>
-      <input value={comment} onChange={(e) => {setComment(e.target.value)}}/>
-
-      <p>Rating:</p>
-      <button type="button" onClick={increaseV}>+</button>
-      <h3>{rating}</h3>
-      <button type="button" onClick={decreaseV}>-</button>
-
-      <button type="submit">Submit</button>
-      </form>
-
-      <MyListCard data={data} hook={hook} setHook={setHook}/>
+        <MyListCard data={data} hook={hook} setHook={setHook}/>
+      </div>
 
       <MyListMetrics data={data} hook={hook} setHook={setHook}/>
 

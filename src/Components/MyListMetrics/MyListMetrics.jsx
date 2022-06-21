@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from './mylistmetrics.module.scss';
 
 const MyListMetrics = (props) => {
 const {data, hook, setHook}=props;
 let sum=0;
 let time=0;
-let days=0;
+let days=0; 
 let hours=0;
 let min=0;
 let count=0;
@@ -26,14 +27,13 @@ count=data.length;
 }
 
   return (
-    <div>
+    <div className={styles.main}>
       <h1>My Statistics</h1>
-      <h2>Total episodes watched: {sum}</h2>
-      <p>Total time watched:</p>
-      <p>{days} Days {hours} hours {min} min</p>
-      <p>Total animes watched: {count}</p>
-    
-
+      <div className={styles.grid}>
+        <p>Total episodes watched: {sum}</p>
+        <p>Total time watched: {days} Days {hours} hours {min} min</p>
+        <p>Total animes watched: {count}</p>
+      </div>
     </div>
   )
 }
