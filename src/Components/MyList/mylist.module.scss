@@ -3,7 +3,7 @@
 
 *{
   margin:0;
-}
+} 
 
 .main{
   width:100vw;
@@ -14,19 +14,20 @@
     display:flex;
     align-items: center;
     justify-content: space-around;
-    border-bottom: 5px solid $line;
+    border-bottom: 5px solid $back;
+    background-color: $back;
     width:100vw;
     height:10vh;
 
     a{
       font-size:30px;
-      background-color: white;
+      background-color: $back;
       color:$text;
       width:5vw;
       padding-left:1vw;
 
     &:hover{
-      color:$text-hover;
+      color:$back-hover;
       transition: 0.6s ease;
     }
     }
@@ -35,7 +36,7 @@
       padding-right:5vw;
       font-family: 'Kdam Thmor Pro', sans-serif;
       font-size:30px;
-      background-color: white;
+      background-color: $back;
       color:$text;
       width:95vw;
       display:flex;
