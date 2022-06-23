@@ -7,6 +7,7 @@ import HomeLeft from './Components/HomeLeft';
 import HomeBottom from './Components/HomeBottom';
 import HomeRight from './Components/HomeRight';
 import MyList from './Components/MyList';
+import Discover from './Components/Discover';
 import {
   BrowserRouter,
   Routes,
@@ -55,6 +56,7 @@ return (
         <HomeBottom/></>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/mylist" element={<MyList/>}/>
+        <Route path="/discover" element={<Discover/>}/>
       </Routes>
     </BrowserRouter> 
   </div>
@@ -62,6 +64,6 @@ return (
 }
 export default App;
 
-// style mylist 
+// style MUI
 //fix upcoming anime more info function for long titles
 
