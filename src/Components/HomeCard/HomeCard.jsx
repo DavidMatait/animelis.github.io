@@ -7,13 +7,13 @@ const [stringTr, setStringTr]=useState('');
 const [prev,setPrev]=useState(0);
 
 if(data.start_date === null){
-  data.start_date="Unknown";
+  data.start_date="Unknown";  
 }
 
 // Set string length limit / UseEffect to prevent infinite loop
 useEffect(()=>{
   let string=data.title
-  const length=60;
+  const length=21;
   
   let tr=string.length > length ? 
   string.substring(0, length) + '...' :
@@ -25,8 +25,10 @@ useEffect(()=>{
   return (
     <div className={styles.card}>
       <img src={data.image_url}/>
-      <h2>{data.rank}.{stringTr}</h2>
-      <p>Starting: {data.start_date}</p>
+      <div className={styles.wrap}>
+        <a href={data.url} target="_blank">{data.rank}.{stringTr}</a>
+        <p>Starting: {data.start_date}</p>
+      </div>
     </div>
   )
 }

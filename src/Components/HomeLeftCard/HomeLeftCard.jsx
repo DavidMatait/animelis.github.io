@@ -7,7 +7,7 @@ const [stringTr, setStringTr]=useState('');
 const [prev,setPrev]=useState(0);
 const [showMore, setShowMore] = useState(false);
 let string=data.content;
-
+ 
   return (
     <div className={styles.main}>
       <h2>{data.user.username}</h2>

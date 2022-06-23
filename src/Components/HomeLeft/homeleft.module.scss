@@ -2,40 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Zen+Kurenaido&display=swap');
 
 .main{
-  height: 115vh;
+  width: 35vw;
+  height: 130vh;
   display:flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   font-family: 'Kdam Thmor Pro', sans-serif;
 
   h1{
-    height: 15vh;
-    font-size: 30px;
-    margin: 10px;
+    width: 30vw;
+    height: 10vh;
+    font-size: 2.7em;;
     color:$back-hover;
     letter-spacing: 3px;
     text-align: center;
     display:flex;
     align-items: center;
-  }
-
-  .border{
-    height:3vh;
-    width:22vw;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 40px;
-    color:$line;
-    border:2px solid $line;
-    background-color: $text;
   }
  
   .rec{
     overflow-y: scroll; 
-    height: 85vh;
+    height: 115vh;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
 }
 
   .rec::-webkit-scrollbar{

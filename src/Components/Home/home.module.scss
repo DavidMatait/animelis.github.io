@@ -1,20 +1,21 @@
 @import '../../Assets/variables';
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Zen+Kurenaido&display=swap');
 
-.main{
-  height:115vh;
+.main{ 
+  width:65vw;
+  height:130vh;
   display:flex;
   flex-direction: column;
-  align-items: center;
+  align-items:center;
   font-family: 'Kdam Thmor Pro', sans-serif;
 
   h1{
-    height:15vh;
+    margin:3px;
+    height:10vh;
     text-align: center;
     display:flex;
     align-items: center;
-    font-size: 35px;
-    margin: 10px;
+    font-size: 2.7em;
     color:$back-hover;
     letter-spacing: 3px;
   }
@@ -22,26 +23,52 @@
   .cards{
     height: 85vh;
     display:grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr; 
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
   }
 
   .cards::-webkit-scrollbar{
     display: none;
   }
 
-  .border{
-    height:3vh;
-    width:40vw;
+  .ads{
+    color:$back-hover;
+    margin-bottom:5vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-size: 40px;
-    color:$line;
-    border:2px solid $line;
-    background-color: $text;
+
+    h1{
+      height: 6vh;
+      padding:0;
+      font-size: 1.5em;
+    }
+
+    .wrap{
+      display:flex;
+      justify-content: space-around;
+      width: 65vw;
+
+      div{
+        display: flex;
+        flex-direction: column;
+        box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
+      }
+    }
+
+    img{
+      width:25vw;
+      height: 25vh;
+    }
+
+    a{
+      text-decoration: none;
+      color:$back-hover;
+      font-size: 1.4em;
+    }
   }
 
 }

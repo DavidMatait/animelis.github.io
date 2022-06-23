@@ -2,11 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Zen+Kurenaido&display=swap');
 
 .main{
-  width:22vw;
-  background-color:$text;
-  border:2px solid $line;
-  margin-top:10px;
-  margin-bottom:10px;
+  width: 30vw;
+  border: none;
+  margin: 20px;
+  padding:0;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  color:$back-hover;
+  box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
 
   h2{
     font-size: 27px;
@@ -22,9 +27,9 @@
   }
 
   button{
-    background-color: $text;
+    background-color: white;
     border:none;
-    color:$line;
+    color:$back-hover;
     font-size: 15px;
     font-family: 'Kdam Thmor Pro', sans-serif;
 

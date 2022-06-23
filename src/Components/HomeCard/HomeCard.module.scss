@@ -2,28 +2,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Zen+Kurenaido&display=swap');
 
 .card{
-  width:17vw;
-  height: 55vh;
-  border: 2px solid $line;
-  margin: 20px;
-  padding:10px;
+  width: 17vw;
+  border: none;
+  margin: 20px; 
+  padding:0;
   display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   font-family: 'Kdam Thmor Pro', sans-serif;
-  background-color: $text;
-  color:$line;
+  color:$back-hover;
+  border-radius:25px;
+  box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
   
-  h2{
-    font-size: 20px;
-    text-align: center;
-  }
   img{
-    padding:0;
-    width:255px;
-    height:348px;
-    border:2px solid $line;
-  }
+      padding:0;
+      border-radius:25px 25px 0 0;
+      height:45vh;
+      width:17vw;
+    }
+  
+    .wrap{
+    width: 17vw;
+    height:12vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius:0 0 25px 25px;
 
+    &:hover{
+      background-color: $text-hover;
+      transition: 0.6s ease;
+    }
+
+      a{
+        text-decoration: none;
+        color:$back-hover;
+        width:10vw;
+        margin-bottom:0.5em;
+        font-size: 1.2em;
+        text-align: center;
+      }
+  }
 }
