@@ -2,16 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Zen+Kurenaido&display=swap');
 
 .main{
-  width: 35vw;
-  height: 130vh;
+  width: 30vw;
+  height: 125vh;
+  margin:2.5vw;
   display:flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   font-family: 'Kdam Thmor Pro', sans-serif;
+  box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
 
   h1{
     width: 30vw;
-    height: 10vh;
+    height: 20vh;
     font-size: 2.7em;;
     color:$back-hover;
     letter-spacing: 3px;
@@ -22,11 +24,13 @@
   }
  
   .rec{
+    width: 29vw;
     overflow-y: scroll; 
-    height: 115vh;
+    height: 102vh;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
+    border-top:1px solid lightgray;
+    border-bottom: 1px solid lightgrey;
 }
 
   .rec::-webkit-scrollbar{

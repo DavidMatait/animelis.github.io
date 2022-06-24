@@ -62,6 +62,9 @@ return (
 }
 export default App;
 
-// style MUI
-//fix upcoming anime more info function for long titles
-
+// modernise styling
+// fix upcoming anime more info function for long titles
+// show more less bug fix
+// style about and finish about info
+// style my list
+// style discover

@@ -13,5 +13,10 @@
     text-decoration: none;
     font-size:40px;
     color:$back-hover;
+
+    &:hover{
+      color:$text-hover;
+      transition: 0.7s ease;
+    }
   }
 }

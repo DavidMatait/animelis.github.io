@@ -31,7 +31,7 @@ useEffect(()=>{
 
   return (
     <div className={styles.main}>      
-    <h1>Recomendations</h1>
+    <h1>Recomendations from MyAnimeList users</h1>
 
       <div className={styles.rec}>
         {data && data.map(data=><HomeLeftCard data={data}/>)}

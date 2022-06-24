@@ -3,34 +3,61 @@
 
 *{
   margin:0;
-}
+} 
 
 .main{
-width:100vw;
-height:10vh;
-margin:0;
+width:95vw;
+height:8vh;
+margin-top:1em;
 font-weight: bold;
-background-color: $back;
+background-color: #dee2e6;
 display:flex;
 align-items: center;
 justify-content: space-around;
-border-bottom: 5px solid $back;
+box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
 
   a{
+    margin-left:0.7em;
+    padding:0.1em 0.7em 0.1em 0.7em;
+    border-radius: 20px;
     font-family: 'Kdam Thmor Pro', sans-serif;
     padding:10p;
-    color:$text;
+    color:$back-hover;
     font-size: 30px;
     border: none;
     text-decoration: none;
     letter-spacing: 2px;
-    background-color: $back;
 
     &:hover{
-      color:$back-hover;
-      transition: 0.8s ease;
+      color:$line;
+      background-color: $text;
+      transition: 1s ease;
     }
 
   }
 
+  .typewriting p{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color:$text-hover;
+    overflow: hidden;
+    border-right: .3em solid $text-hover; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .01em; 
+    animation: 
+      typing 3s steps(30, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: $text-hover; }
+  }
 }
