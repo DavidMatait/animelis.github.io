@@ -8,7 +8,7 @@
 .main{
 width:95vw;
 height:8vh;
-margin-top:1em;
+margin-top:1em; 
 font-weight: bold;
 background-color: #dee2e6;
 display:flex;
@@ -42,13 +42,13 @@ box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
     font-weight: 700;
     color:$text-hover;
     overflow: hidden;
-    border-right: .3em solid $text-hover; 
+    border-right: .3em solid transparent; 
     white-space: nowrap; 
     margin: 0 auto; 
     letter-spacing: .01em; 
     animation: 
       typing 3s steps(30, end),
-      blink-caret .75s step-end infinite;
+      blink-caret .75s step-end 8;
   }
   
   @keyframes typing {
