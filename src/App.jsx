@@ -63,6 +63,7 @@ return (
 export default App;
 
 // modernise styling
-// style about and finish about info
-// style my list
 // style discover
+// Firebase
+// Log in page
+// Finish styling and bug fixing

@@ -19,7 +19,9 @@ if(string.length<=120){
     <div className={styles.main}>
       <h2>{data.user.username}</h2>
       <p>{showMore ? string : `${string.substring(0, 120)} `}
-      {toggle ? "" : <button className={styles.btn} onClick={() => setShowMore(!showMore)}> {showMore ? "Show less" : "Show more"}</button>}
+         {toggle ? "" : <button className={styles.btn} 
+         onClick={() => setShowMore(!showMore)}> 
+         {showMore ? "Show less" : "Show more"}</button>}
       </p>
       <a href={data.entry[0].url} target='_blank'>More info at MyAnimeList</a>
     </div>

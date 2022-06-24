@@ -7,7 +7,7 @@ let sum=0;
 let time=0;
 let days=0; 
 let hours=0;
-let min=0;
+let min=0; 
 let count=0;
 
 // Hook forces component to re-render

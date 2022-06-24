@@ -7,38 +7,41 @@
 
 .main{
   width:100vw;
-  height:100vh;
   margin:0;
-  font-family: 'Kdam Thmor Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
   
   .top{
     display:flex;
     align-items: center;
     justify-content: space-around;
-    border-bottom: 5px solid $back;
-    background-color: $back;
-    width:100vw;
-    height:10vh;
+    width:95vw;
+    height:8vh;
+    margin-top:1em;
+    font-weight: bold;
+    background-color: #dee2e6;
+    box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
 
     a{
       font-size:30px;
-      background-color: $back;
-      color:$text;
+      background-color: #dee2e6;
+      color:$back-hover;
       width:5vw;
       padding-left:1vw;
 
     &:hover{
-      color:$back-hover;
+      color:$text-hover;
       transition: 0.6s ease;
     }
     }
 
     h1{
-      padding-right:7.5vw;
+      padding-right:5vw;
       font-family: 'Kdam Thmor Pro', sans-serif;
       font-size:30px;
-      background-color: $back;
-      color:$text;
+      background-color: #dee2e6;
+      color:$back-hover;
       width:95vw;
       display:flex;
       align-items: center;
@@ -49,82 +52,79 @@
   }
 
 .formlist{
+  width: 100vw;
   height: 70vh;
-  display: flex;
-  color:$back;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
 
   .formH{
-    width:70vw;
+    width:45vw;
+    margin:2.5vw;
+    height: 60vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+
   }
 
   .h2{
-    height: 10vh;
+    height: 8vh;
     text-align: center;
     display:flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
-    margin: 10px;
+    font-size: 2.2em;
+    margin: 0.5em;
     color:$back-hover;
   }
 
   .form{
-    height: 45vh;
-    border:3px solid $line;
+    height: 42.5vh;
+    background-color: white;
+    box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
     border-radius:5px;
-    width:30vw;
+    width:35vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: $text;
     
     p{
-      font-size: 25px;
+      color:$line;
+      font-size: 1.7em;
       padding:10px;
-      width: 15vw;
     }
 
     input{
       margin:10px;
       font-family: 'Kdam Thmor Pro', sans-serif;
       color:$back;
-      font-size: 15px;
-      background-color: $back-hover;
-      border:2px solid $back;
+      border:1px solid #dee2e6;
+      background-color: #dee2e6;
+      box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
     }
 
     select{
       margin:10px;
       font-family: 'Kdam Thmor Pro', sans-serif;
       color:$back;
-      font-size: 15px;
-      background-color: $back-hover;
-      border:2px solid $back;
+      background-color: #dee2e6;
+      box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
+      border:1px solid #dee2e6;
     }
 
     h3{
       width:3vw;
     }
 
-    button{
-      margin:10px;
-      width:7.5vw;
-      display:flex;
-      justify-content: space-around;
-      align-items: center;
-      font-size: 25px;
-      color:$back;
-      background-color: $back-hover;
-      border:2px solid $back;
-      border-radius:3px;
+    .btn{
+      font-size: 1.8em;
+      color:$back-hover;
+      background-color: white;
+      border:none;
 
       &:hover{
-      color:$text;
-      background-color: $back;
-      border:2px solid $text;
+      color:$line;
       transition: 0.6s ease;
       }
     }
@@ -140,38 +140,36 @@
         display:flex;
         justify-content: space-around;
         text-align: center;
-        font-size: 25px;
-      }
-
-      button{
-        display:flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 4vh;
-        width: 2vw;
-        font-size: 30px;
-        color:$back;
-        background-color: $back-hover;
-        border:2px solid $back;
-        border-radius:3px;
-
-        &:hover{
-        color:$text;
-        background-color: $back;
-        border:2px solid $text;
-        transition: 0.6s ease;
-        }
+        font-size: 1.8em;
+        color:$line;
       }
     }
+    .sbmt{
 
-
+          button{
+          margin:10px;
+          width:7.5vw;
+          display:flex;
+          justify-content: space-around;
+          align-items: center;
+          font-size: 1.2em;
+          font-weight: 700;
+          font-family: 'Kdam Thmor Pro', sans-serif;
+          color:$back;
+          background-color: #dee2e6;
+          border:1px solid #dee2e6;
+          border-radius:3px;
+          box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
+    
+          &:hover{
+          color:$back-hover;
+          background-color: $line;
+          border:1px solid $line;
+          transition: 0.6s ease;
+          }
+        }
+      }
 
   }
-
-
-
 }
-
-
-
 }

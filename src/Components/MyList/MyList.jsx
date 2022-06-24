@@ -3,6 +3,8 @@ import styles from './mylist.module.scss';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { faCircleMinus } from '@fortawesome/free-solid-svg-icons';
 import MyListCard from '../MyListCard';
 import MyListMetrics from '../MyListMetrics';
 
@@ -89,12 +91,14 @@ const decreaseV=()=>{
            
            <p>Rating:</p>
             <div className={styles.rates}>
-              <button type="button" onClick={decreaseV}>-</button>
+              <button type="button" className={styles.btn} onClick={decreaseV}><FontAwesomeIcon icon={faCircleMinus} /></button>
                 <h3>{rating}</h3>
-              <button type="button" onClick={increaseV}>+</button>
+              <button type="button" className={styles.btn} onClick={increaseV}><FontAwesomeIcon icon={faCirclePlus} /></button>
             </div>
             
-            <button type="submit">Add</button>
+            <div className={styles.sbmt}>
+              <button type="submit">Add Anime</button>
+            </div>
           </form>
         </div>
 

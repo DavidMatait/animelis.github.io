@@ -13,7 +13,7 @@ if(data.start_date === null){
 // Set string length limit / UseEffect to prevent infinite loop
 useEffect(()=>{
   let string=data.title
-  const length=21;
+  const length=22;
   
   let tr=string.length > length ? 
   string.substring(0, length) + '...' :
