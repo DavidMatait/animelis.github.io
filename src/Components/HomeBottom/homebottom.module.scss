@@ -2,9 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Zen+Kurenaido&display=swap');
 
 .main{
+  background-color:#343a40;
   width:100vw;
   height: 10vh;
-  border-top:2px solid white;
+  border-top:2px solid #343a40;
   display:flex;
   justify-content: space-around;
   align-items: center;
@@ -15,7 +16,7 @@
     color:$back-hover;
 
     &:hover{
-      color:$text-hover;
+      color:$text;
       transition: 0.7s ease;
     }
   }
