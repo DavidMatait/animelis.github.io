@@ -41,7 +41,7 @@ const About = () => {
             of how much time, episodes and animes you have watched in total according to 
             what you have submitted.
           </p>
-        </div>
+        </div> 
         <div className={styles.par}>
           <h1>Project is created and developed by Deividas Mataitis</h1>
         </div>
