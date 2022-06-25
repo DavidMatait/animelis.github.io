@@ -62,8 +62,6 @@ return (
 }
 export default App;
 
-// modernise styling
-// style discover
 // Firebase
 // Log in page
 // Finish styling and bug fixing

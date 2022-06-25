@@ -6,7 +6,7 @@
 }
 
 .main{
-  width:100vw;
+  width:98vw;
   margin:0;
   display: flex;
   flex-direction: column;
@@ -52,8 +52,7 @@
   }
 
   .wrapmid{
-    height:90vh;
-    width:95vw;
+    height:100vh;
     display:grid;
     grid-template-columns: 1fr 3fr;
 
@@ -70,7 +69,7 @@
 
       input{
         margin-top:1.5em;
-        padding:0.2em;
+        padding:0.3em;
         font-size: 1.5em;
         color:$line;
         background-color: white;
@@ -83,8 +82,16 @@
           background-color: $text;
           border:1px solid $text;
         }
+
+       
       }
 
+      ::placeholder {
+          color: $line;
+        }
+      input:focus{
+        outline:none;
+      }
   }
 
 }

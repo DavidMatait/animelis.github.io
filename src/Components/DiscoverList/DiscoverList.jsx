@@ -1,17 +1,19 @@
 import React, {useState, useEffect} from 'react';
+import styles from './discoverlist.module.scss';
 
 const DiscoverList = (props) => {
 const {data}=props;
 
   return (
-    <div>
-      {data.map(anime=>{
+    <div className={styles.grid}>
+      {data.map(anime=>{ 
         if(data){
-      return <div>
-        <h1>{anime.title}</h1>
-        <img src={anime.image_url}/>
-        <p>Episodes: {anime.episodes}</p>
-        <p>Score: {anime.score}</p>
+      return <div className={styles.card}>
+          <img src={anime.image_url}/>
+        <div className={styles.wrap}>
+          <h1>{anime.title}</h1>
+          <p>Score: {anime.score}</p>
+        </div>
         </div>}})}
     </div>
 

@@ -104,6 +104,10 @@
       box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
     }
 
+    input:focus{
+      outline:none;
+    }
+
     select{
       margin:10px;
       font-family: 'Kdam Thmor Pro', sans-serif;

@@ -65,6 +65,7 @@ useEffect(()=>{
         <div className={styles.searchanime}>
             <form onSubmit={HandleSearch}>
               <input 
+                type="text"
                 placeholder="Search for the anime..."
                 required
                 value={search}
@@ -72,9 +73,7 @@ useEffect(()=>{
               </input>
             </form>
 
-            <div className={styles.searchresults}>
               <DiscoverList data={data} />
-            </div>
 
         </div>
 
