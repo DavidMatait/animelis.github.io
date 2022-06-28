@@ -7,6 +7,8 @@ import HomeLeft from './Components/HomeLeft';
 import HomeBottom from './Components/HomeBottom';
 import MyList from './Components/MyList';
 import Discover from './Components/Discover';
+import Login from './Components/Login';
+import SignIn from './Components/SignIn';
 import {
   BrowserRouter,
   Routes,
@@ -46,12 +48,14 @@ return (
   <div className={styles.main}>    
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<><Nav/>
+        <Route path="/signin" element={<SignIn/>}/>
+          <Route path="/home" element={<><Nav/>
           <div className={styles.mid}>
           <HomeLeft/>
           <Home data={data}/>
           </div>
-        <HomeBottom/></>}/>
+        <HomeBottom/></>}/>:
+        <Route exact path="/" element={<Login/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/mylist" element={<MyList/>}/>
         <Route path="/discover" element={<Discover/>}/>
