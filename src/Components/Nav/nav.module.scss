@@ -21,7 +21,6 @@ box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
     padding:0.1em 0.7em 0.1em 0.7em;
     border-radius: 20px;
     font-family: 'Kdam Thmor Pro', sans-serif;
-    padding:10p;
     color:$back-hover;
     font-size: 30px;
     border: none;
@@ -33,6 +32,7 @@ box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
       background-color: $text;
       transition: 1s ease;
     }
+
 
   }
 
@@ -61,3 +61,22 @@ box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
     50% { border-color: $text-hover; }
   }
 }
+
+.signout{
+  padding:0.1em 0.7em 0.1em 0.7em;
+  border-radius: 20px;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  padding:10p;
+  color:$back-hover;
+  background-color: #343a40;
+  font-size: 30px;
+  border: none;
+  text-decoration: none;
+  letter-spacing: 2px;
+
+  &:hover{
+    color:$line;
+    background-color: $text;
+    transition: 1s ease;
+  }
+  }

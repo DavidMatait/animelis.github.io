@@ -41,7 +41,7 @@ useEffect(()=>{
     setError('Failed')
   })
 // Prev does prevent data from infinite loop  
-},[prev])
+},[prev]) 
 
 // BrowserRouter is used to manage the website pages effectively
 return (

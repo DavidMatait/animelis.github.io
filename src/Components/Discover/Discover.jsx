@@ -52,7 +52,7 @@ useEffect(()=>{
   return (
     <div className={styles.main}>
       <div className={styles.top}>
-        <Link to="/"><FontAwesomeIcon icon={faHouse} /></Link>
+        <Link to="/home"><FontAwesomeIcon icon={faHouse} /></Link>
         <h1>Discover</h1>
       </div>
 

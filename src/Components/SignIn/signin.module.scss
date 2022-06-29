@@ -13,13 +13,7 @@
   justify-content: center;
   align-items: center;
 
-    h1{
-      color:$back-hover;
-      font-size: 2.6em;
-      margin: 0.3em;
-      }
-
-  .logarea{
+  .signinarea{
     width:30vw;
     display:flex;
     flex-direction: column;
@@ -29,9 +23,7 @@
     box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
     font-family: 'Kdam Thmor Pro', sans-serif;
 
-    
-
-    h2{
+    h1{
       color:$line;
       font-size: 2.2em;
       margin: 0.3em; 
@@ -41,11 +33,6 @@
       color:$back-hover;
       font-size: 1.8em;
       margin-left: 10px;
-    }
-
-    .question{
-      margin-top:0.7em;
-      color:$line;
     }
 
     input{
@@ -78,26 +65,6 @@
         background-color: $back-hover;
         transition: 1s ease;
       }
-    }
-
-    a{
-      margin:0.5em;
-      padding:2px 10px 2px 10px;
-      border-radius: 20px;
-      color:$line;
-      background-color: $text;
-      font-size: 1.5em;
-      border: none;
-      text-decoration: none;
-      letter-spacing: 2px;
-  
-      &:hover{
-        color:$line;
-        background-color: $back-hover;
-        transition: 1s ease;
-      }
-  
-  
     }
   }
 }

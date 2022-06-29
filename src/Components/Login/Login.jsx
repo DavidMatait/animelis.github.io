@@ -2,6 +2,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
 import {auth} from '../../firebase';
+import styles from './login.module.scss';
 
 const Login = (props) => {
 
@@ -19,17 +20,20 @@ const login=async()=>{
 }
 
   return (
-    <div>
+    <div className={styles.main}>
       <h1>Welcome to AnimeList!</h1>
-      <h2>Login</h2>
-      <p>Email</p>
-      <input onChange={(e)=>setLoginEmail(e.target.value)}/>
-      <p>Password</p>
-      <input onChange={(e)=>setLoginPassword(e.target.value)}/>
-      <button onClick={login}>Login</button>
-
-      <p>Don't have account?</p>
-      <Link to="/signin">Create account</Link>
+      <div className={styles.logarea}>
+        
+        <h2>Login</h2>
+        <p>Email</p>
+        <input onChange={(e)=>setLoginEmail(e.target.value)} required/>
+        <p>Password</p>
+        <input type="password" onChange={(e)=>setLoginPassword(e.target.value)} minLength="6" required/>
+        <button onClick={login}>Login</button>
+      
+        <p className={styles.question}>Don't have an account?</p>
+        <Link to="/signin">Create account</Link>
+      </div>
     </div>
   )
 }

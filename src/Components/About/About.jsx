@@ -14,7 +14,7 @@ const About = () => {
   return (
    <div className={styles.main}>
     <div className={styles.top}>
-      <Link to="/"><FontAwesomeIcon icon={faHouse} /></Link>
+      <Link to="/home"><FontAwesomeIcon icon={faHouse} /></Link>
       <h1>About</h1>
     </div>
     <div className={styles.mid}>

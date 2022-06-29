@@ -3,6 +3,8 @@ import style from './nav.module.scss';
 import { Link, useNavigate} from "react-router-dom";
 import { signOut } from 'firebase/auth';
 import {auth} from '../../firebase';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOut } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = () => {
 const navigate=useNavigate();
@@ -20,7 +22,7 @@ const logout=async()=>{
         <Link to="/about">About</Link>
         <Link to="/mylist">My List</Link>
         <Link to="/discover">Discover</Link>
-        <button onClick={logout}>Sign out</button>
+        <button className={style.signout} onClick={logout}><FontAwesomeIcon icon={faSignOut} /></button>
       </div>
   )
 }
