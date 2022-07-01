@@ -58,7 +58,7 @@ box-shadow:3px 4px 5px 4px rgba(0,0,0,0.4);
   
   @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: $text-hover; }
+    50% { border-color: $text; }
   }
 }
 

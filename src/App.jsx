@@ -67,5 +67,4 @@ return (
 export default App;
 
 // Firebase
-// Log in page
 // Finish styling and bug fixing

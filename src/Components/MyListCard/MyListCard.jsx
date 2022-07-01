@@ -1,16 +1,36 @@
 import React, {useState, useEffect} from 'react';
 import styles from './mylistcard.module.scss';
+import {db} from '../../firebase';
+import {collection, onSnapshot, getDocs, doc} from "firebase/firestore";
+
 
 const MyListCard = (props) => {
 const {data, hook, setHook}=props;
+const [anime, setAnime]=useState([]);
 
 // Hook forces component to re-render
 if(!hook){
   setHook(hook) 
 }
 
+// Fetch Anime from firestore
+const fetchAnime = async () => {
+  let getAnime = await getDocs(collection(db,"AnimeList"))
+  setAnime(getAnime.docs.map((doc)=>({...doc.data(),id:doc.id})))
+console.log(getAnime);
+}
+
+
+useEffect(()=>{
+fetchAnime()
+},[])
+
+console.log(anime);
+
+
+
 // Show no content if there is no data
-if(data.length===0){
+if(anime.length===0){
   return <div className={styles.main}>
     <h1>My List</h1>    
     <div className={styles.rec}>
@@ -23,7 +43,7 @@ if(data.length===0){
       <h1>My List</h1>
 
       <div className={styles.rec}>
-      {data.map(function(d, idx){
+      {anime.map(function(d, idx){
         if(d.comment===""){
           d.comment="No Comment"
         }

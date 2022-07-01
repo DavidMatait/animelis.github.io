@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './mylist.module.scss';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +7,8 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { faCircleMinus } from '@fortawesome/free-solid-svg-icons';
 import MyListCard from '../MyListCard';
 import MyListMetrics from '../MyListMetrics';
+import {db} from '../../firebase';
+import {collection, addDoc} from "firebase/firestore";
 
 const MyList = () => {
 
@@ -30,6 +32,20 @@ const handleSubmit = (e) => {
   setComment('')
   setRating(0)
 }
+
+// Upload anime to firebase
+const createAnime = async () => {
+  const newAnime = await addDoc(collection(db, "AnimeList"), {
+    title,genre,numb,comment,rating
+  });
+
+  const addAnime = await addDoc(collection(db, "AnimeList", newAnime.id, "anime"), {
+    title,genre,numb,comment,rating
+  });
+
+  console.log(`New anime created: ${newAnime.id}`)
+}
+
 
 //Set rating out of 10
 //Increase rating value
@@ -84,7 +100,7 @@ const decreaseV=()=>{
               </select>
 
             <p>Number of episodes:</p>
-              <input type="text" pattern="\d*" maxlength="4" value={numb} onChange={(e) => {setNumb(e.target.value)}} required/>
+              <input type="text" pattern="\d*" maxLength="4" value={numb} onChange={(e) => {setNumb(e.target.value)}} required/>
 
             <p>Comment:</p>
               <input value={comment} onChange={(e) => {setComment(e.target.value)}}/>
@@ -97,7 +113,7 @@ const decreaseV=()=>{
             </div>
             
             <div className={styles.sbmt}>
-              <button type="submit">Add Anime</button>
+              <button type="submit" onClick={createAnime}>Add Anime</button>
             </div>
           </form>
         </div>
