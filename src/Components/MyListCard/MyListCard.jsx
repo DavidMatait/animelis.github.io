@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import styles from './mylistcard.module.scss';
 import {db} from '../../firebase';
 import {doc, deleteDoc} from "firebase/firestore";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 const MyListCard = (props) => {
 const {setAid, anime, uid}=props;
 
@@ -39,8 +40,8 @@ if(anime.length===0){
           <p key={index}>Genre: {d.genre}</p>
           <p key={index}>Number of episodes: {d.numb}</p>
           <p key={index}>Comment: {d.comment}</p>
-          <p key={index}>Rating: {d.rating}/10</p>
-          <button onClick={() => {deleteAnime(d)}}>Remove</button>
+          <p key={index}>Rating: {d.rating}/10<button onClick={() => {deleteAnime(d)}}><FontAwesomeIcon icon={faTrash} /></button></p>
+          
         </div>)})}
 
       </div>

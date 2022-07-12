@@ -60,9 +60,27 @@
   }
 
   p{
+    width: 29vw;
+    display: flex;
+    justify-content: space-between;
     font-size:1.4em;
     color:$back-hover;
     margin: 5px;
+  }
+
+  button{
+    padding:0;
+    border:none;
+    background-color: #dee2e6;
+    font-size:1.2em;
+    color:#9d0208;
+    margin: 5px;
+
+    &:hover{
+      color:#d00000;
+      transition: 0.8s ease;
+    }
+
   }
   }
 }

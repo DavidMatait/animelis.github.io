@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate} from "react-router-dom";
 import {auth} from '../../firebase';
 import styles from './login.module.scss'; 
@@ -8,6 +8,8 @@ const Login = (props) => {
 const {setEmail}=props
 const [loginEmail, setLoginEmail]=useState("");
 const [loginPassword, setLoginPassword]=useState("");
+const [msg, setMsg]=useState("")
+
 const navigate=useNavigate();
 const login=async()=>{
   try{
@@ -16,7 +18,13 @@ const login=async()=>{
   setEmail(loginEmail)
   navigate("/home");
   }catch(error) {
-    console.log(error.message);
+    
+// Show what is wrong while loging in
+  if(error.message==="Firebase: Error (auth/wrong-password)."){
+  setMsg("Password is incorrect")
+  }else if(error.message==="Firebase: Error (auth/user-not-found)."){
+  setMsg("The email is not correct")
+  }
   }
 }
 
@@ -26,6 +34,7 @@ const login=async()=>{
       <div className={styles.logarea}>
         
         <h2>Login</h2>
+        <p className={styles.err}>{msg}</p>
         <p>Email</p>
         <input onChange={(e)=>setLoginEmail(e.target.value)} required/>
         <p>Password</p>

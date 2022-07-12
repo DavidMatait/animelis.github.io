@@ -11,7 +11,7 @@ import {db, auth} from '../../firebase';
 import {onAuthStateChanged} from 'firebase/auth'
 import {collection, addDoc, getDocs, doc, onSnapshot} from "firebase/firestore";
 
-const MyList = (props) => {
+const MyList = () => {
 
 const [title, setTitle]=useState('');
 const [genre, setGenre]=useState('');

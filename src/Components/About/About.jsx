@@ -37,9 +37,9 @@ const About = () => {
             "Recommendations from MyAnimeList users". 2. Calling API accordingly after 
             submiting the search function and returns anime by its title. Additional 
             functions include: show more/less content depending on its length, submiting 
-            form of your watched anime and displaying it next to the form, showing metrics 
-            of how much time, episodes and animes you have watched in total according to 
-            what you have submitted.
+            form of your watched anime and displaying it next to the form and more. The 
+            project is backed by Firebase, so users of it can create own anime list and 
+            have personal account for use.
           </p>
         </div> 
         <div className={styles.par}>
