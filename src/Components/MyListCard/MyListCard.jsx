@@ -1,33 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import styles from './mylistcard.module.scss';
 import {db} from '../../firebase';
-import {collection, onSnapshot, getDocs, doc} from "firebase/firestore";
-
+import {doc, deleteDoc} from "firebase/firestore";
 
 const MyListCard = (props) => {
-const {data, hook, setHook}=props;
-const [anime, setAnime]=useState([]);
+const {setAid, anime, uid}=props;
 
-// Hook forces component to re-render
-if(!hook){
-  setHook(hook) 
+// Set length of anime array
+setAid(anime.length)
+anime.sort((a,b)=>{return a.aid-b.aid})
+
+//Delete document
+const deleteAnime = async (e) => {
+ const delAnime=await deleteDoc(doc(db,"Users", uid,"anime",e.id))
+ window.location.reload()
 }
-
-// Fetch Anime from firestore
-const fetchAnime = async () => {
-  let getAnime = await getDocs(collection(db,"AnimeList"))
-  setAnime(getAnime.docs.map((doc)=>({...doc.data(),id:doc.id})))
-console.log(getAnime);
-}
-
-
-useEffect(()=>{
-fetchAnime()
-},[])
-
-console.log(anime);
-
-
 
 // Show no content if there is no data
 if(anime.length===0){
@@ -43,17 +30,17 @@ if(anime.length===0){
       <h1>My List</h1>
 
       <div className={styles.rec}>
-      {anime.map(function(d, idx){
+      {anime.map(function(d, index){
         if(d.comment===""){
           d.comment="No Comment"
         }
-
       return (<div className={styles.card}>
-        <h2 key={idx}>{idx+1}. {d.title}</h2>
-          <p key={idx}>Genre: {d.genre}</p>
-          <p key={idx}>Number of episodes: {d.numb}</p>
-          <p key={idx}>Comment: {d.comment}</p>
-          <p key={idx}>Rating: {d.rating}/10</p>
+        <h2 key={index}>{index+1}. {d.title}</h2>
+          <p key={index}>Genre: {d.genre}</p>
+          <p key={index}>Number of episodes: {d.numb}</p>
+          <p key={index}>Comment: {d.comment}</p>
+          <p key={index}>Rating: {d.rating}/10</p>
+          <button onClick={() => {deleteAnime(d)}}>Remove</button>
         </div>)})}
 
       </div>

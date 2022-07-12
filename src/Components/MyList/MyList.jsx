@@ -7,25 +7,25 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { faCircleMinus } from '@fortawesome/free-solid-svg-icons';
 import MyListCard from '../MyListCard';
 import MyListMetrics from '../MyListMetrics';
-import {db} from '../../firebase';
-import {collection, addDoc} from "firebase/firestore";
+import {db, auth} from '../../firebase';
+import {onAuthStateChanged} from 'firebase/auth'
+import {collection, addDoc, getDocs, doc, onSnapshot} from "firebase/firestore";
 
-const MyList = () => {
+const MyList = (props) => {
 
 const [title, setTitle]=useState('');
 const [genre, setGenre]=useState('');
 const [numb, setNumb]=useState('');
 const [comment, setComment]=useState('');
 const [rating, setRating]=useState(0);
-const [hook, setHook]=useState(true);
-const [data, setData]=useState([]);
+const [aid, setAid]=useState(0);
+const [data,setData]=useState([])
+const [uid, setUid]=useState('')
+const [anime, setAnime]=useState([]);
 
 //Handle submit function to create list card
 const handleSubmit = (e) => {
   e.preventDefault()
-  let newCard = {title:title,genre:genre,numb:numb,comment:comment,rating:rating}
-  data.push(newCard)
-  setHook(!hook)
   setTitle('');
   setGenre('')
   setNumb('')
@@ -33,19 +33,28 @@ const handleSubmit = (e) => {
   setRating(0)
 }
 
-// Upload anime to firebase
+// Fetch anime once and get user
+useEffect(() => {
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      setUid(user.uid)
+      let getAnime = await getDocs(collection(db, "Users", user.uid, "anime"))
+      setAnime(getAnime.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id
+      })))
+    }
+  });
+}, [])
+
+// Upload anime to firebase by uid
 const createAnime = async () => {
-  const newAnime = await addDoc(collection(db, "AnimeList"), {
-    title,genre,numb,comment,rating
-  });
-
-  const addAnime = await addDoc(collection(db, "AnimeList", newAnime.id, "anime"), {
-    title,genre,numb,comment,rating
-  });
-
-  console.log(`New anime created: ${newAnime.id}`)
-}
-
+  setAid(anime.length+1)
+   const addAnime= await addDoc(collection(db,"Users", uid,"anime"),{
+        title,genre,numb,comment,rating,aid
+      })   
+      window.location.reload()
+  }
 
 //Set rating out of 10
 //Increase rating value
@@ -118,10 +127,10 @@ const decreaseV=()=>{
           </form>
         </div>
 
-        <MyListCard data={data} hook={hook} setHook={setHook}/>
+        <MyListCard anime={anime} uid={uid} setAid={setAid}/>
       </div>
 
-      <MyListMetrics data={data} hook={hook} setHook={setHook}/>
+      <MyListMetrics anime={anime}/>
 
     </div>
   )

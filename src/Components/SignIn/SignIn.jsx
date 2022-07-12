@@ -2,22 +2,30 @@ import { useState } from "react";
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 import {auth} from '../../firebase';
 import {useNavigate} from "react-router-dom";
+import {db} from '../../firebase';
 import styles from './signin.module.scss';
+import {setDoc,doc} from "firebase/firestore";
 
-const SignIn = () => {
+const SignIn = (props) => {
+const {setEmail}=props
 const [registerEmail, setRegisterEmail]=useState("");
 const [registerPassword, setRegisterPassword]=useState("");
 const navigate=useNavigate();
 
-  const register=async()=>{
-    try{
-    const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
-    navigate("/home");
-    }catch(error) {
+  const register = async () => {
+    try {
+      const { user } = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+      
+      const newUser = await setDoc(doc(db, "Users", user.uid), {
+        email: registerEmail
+      });
+      
+      setEmail(registerEmail)
+      navigate("/home");
+    } catch (error) {
       console.log(error.message);
     }
   }
-
 
   return (
     <div className={styles.main}>

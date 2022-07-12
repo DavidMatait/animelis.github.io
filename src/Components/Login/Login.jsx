@@ -2,10 +2,10 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
 import {auth} from '../../firebase';
-import styles from './login.module.scss';
+import styles from './login.module.scss'; 
 
 const Login = (props) => {
-
+const {setEmail}=props
 const [loginEmail, setLoginEmail]=useState("");
 const [loginPassword, setLoginPassword]=useState("");
 const navigate=useNavigate();
@@ -13,6 +13,7 @@ const login=async()=>{
   try{
   const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
   console.log("logged in")
+  setEmail(loginEmail)
   navigate("/home");
   }catch(error) {
     console.log(error.message);

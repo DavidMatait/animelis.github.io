@@ -21,6 +21,9 @@ const [ispending, setPending] = useState(true);
 const [error, setError]=useState(null);
 const [data, setData]=useState('');
 const [prev,setPrev]=useState(0);
+const [email,setEmail]=useState('');
+
+console.log(email);
 
 // Fetching API data of Top Upcoming Anime
 useEffect(()=>{
@@ -48,16 +51,16 @@ return (
   <div className={styles.main}>    
     <BrowserRouter>
       <Routes>
-        <Route path="/signin" element={<SignIn/>}/>
+        <Route path="/signin" element={<SignIn setEmail={setEmail}/>}/>
           <Route path="/home" element={<><Nav/>
           <div className={styles.mid}>
           <HomeLeft/>
           <Home data={data}/>
           </div>
         <HomeBottom/></>}/>:
-        <Route exact path="/" element={<Login/>}/>
+        <Route exact path="/" element={<Login setEmail={setEmail}/>}/>
         <Route path="/about" element={<About/>}/>
-        <Route path="/mylist" element={<MyList/>}/>
+        <Route path="/mylist" element={<MyList email={email}/>}/>
         <Route path="/discover" element={<Discover/>}/>
       </Routes>
     </BrowserRouter> 
