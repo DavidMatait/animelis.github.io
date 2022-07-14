@@ -9,6 +9,7 @@ import MyList from './Components/MyList';
 import Discover from './Components/Discover';
 import Login from './Components/Login';
 import SignIn from './Components/SignIn';
+import MyFavourite from './Components/MyFavourite';
 import {
   BrowserRouter,
   Routes,
@@ -62,6 +63,7 @@ return (
         <Route path="/about" element={<About/>}/>
         <Route path="/mylist" element={<MyList email={email}/>}/>
         <Route path="/discover" element={<Discover/>}/>
+        <Route path="/myfavourites" element={<MyFavourite/>}/>
       </Routes>
     </BrowserRouter> 
   </div>

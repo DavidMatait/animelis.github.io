@@ -38,11 +38,6 @@
     align-items: center;
     border-radius:0 0 25px 25px;
 
-    &:hover{
-      background-color: $text-hover;
-      transition: 0.6s ease;
-    }
-
       p{
         text-decoration: none;
         color:$back-hover;
@@ -56,9 +51,30 @@
         text-decoration: none;
         color:$back-hover;
         width:10vw;
+        height: 40px;
         margin-bottom:0.2em;
         font-size: 0.8em;
         text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      button{
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        color:$text;
+        background-color: $line;
+        padding:0.3em;
+        font-size: 1em;
+        width:11vw;
+        border:none;
+        border-radius: 0 0 25px 25px;          
+  
+          &:hover{
+            background-color:$text;
+            color:$line;
+            transition: 0.8s ease;
+          }
       }
   }
 }

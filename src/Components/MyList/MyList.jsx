@@ -9,9 +9,9 @@ import MyListCard from '../MyListCard';
 import MyListMetrics from '../MyListMetrics';
 import {db, auth} from '../../firebase';
 import {onAuthStateChanged} from 'firebase/auth'
-import {collection, addDoc, getDocs, doc, onSnapshot} from "firebase/firestore";
+import {collection, addDoc, getDocs} from "firebase/firestore";
 
-const MyList = () => {
+const MyList = () => { 
 
 const [title, setTitle]=useState('');
 const [genre, setGenre]=useState('');
@@ -19,7 +19,6 @@ const [numb, setNumb]=useState('');
 const [comment, setComment]=useState('');
 const [rating, setRating]=useState(0);
 const [aid, setAid]=useState(0);
-const [data,setData]=useState([])
 const [uid, setUid]=useState('')
 const [anime, setAnime]=useState([]);
 

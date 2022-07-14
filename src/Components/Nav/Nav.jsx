@@ -21,6 +21,7 @@ const logout=async()=>{
       </div>
         <Link to="/about">About</Link>
         <Link to="/mylist">My List</Link>
+        <Link to="/myfavourites">My Favourites</Link>
         <Link to="/discover">Discover</Link>
         <button className={style.signout} onClick={logout}><FontAwesomeIcon icon={faSignOut} /></button>
       </div>
