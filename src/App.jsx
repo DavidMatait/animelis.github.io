@@ -50,7 +50,7 @@ useEffect(()=>{
 // BrowserRouter is used to manage the website pages effectively
 return (
   <div className={styles.main}>    
-    <BrowserRouter>
+    <BrowserRouter> 
       <Routes>
         <Route path="/signin" element={<SignIn setEmail={setEmail}/>}/>
           <Route path="/home" element={<><Nav/>
@@ -73,3 +73,9 @@ export default App;
 
 // Firebase
 // Finish styling and bug fixing
+// "@babel/core": "^7.18.6",
+// "@babel/eslint-parser": "^7.18.2",
+// "@babel/preset-react": "^7.17.12",
+// "eslint": "^8.19.0",
+// "eslint-config-react-app": "^6.0.0",
+// "gh-pages": "^4.0.0"
